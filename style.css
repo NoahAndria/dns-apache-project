@@ -1,0 +1,156 @@
+:root {
+  --bg: #0f172a;
+  --panel: #111827;
+  --border: #1f2937;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --accent: #38bdf8;
+  --accent-2: #a78bfa;
+  --danger: #f87171;
+  --success: #34d399;
+  --card-shadow: 0 20px 60px rgba(0,0,0,0.35);
+  --radius: 14px;
+  --font: "Space Grotesk", "Inter", system-ui, -apple-system, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  background: radial-gradient(circle at 20% 20%, rgba(56,189,248,0.08), transparent 25%),
+              radial-gradient(circle at 80% 0%, rgba(167,139,250,0.1), transparent 22%),
+              var(--bg);
+  color: var(--text);
+}
+
+a { color: var(--text); text-decoration: none; }
+a:hover { color: var(--accent); }
+
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 240px;
+  background: linear-gradient(180deg, rgba(31,41,55,0.9), rgba(17,24,39,0.9));
+  border-right: 1px solid var(--border);
+  padding: 24px 18px;
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+  box-shadow: var(--card-shadow);
+}
+
+.sidebar h3 {
+  margin: 0 0 18px 6px;
+  letter-spacing: 0.5px;
+  color: var(--muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.nav-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+.nav-item a {
+  display: block;
+  padding: 12px 14px;
+  border-radius: 10px;
+  color: var(--text);
+  background: transparent;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+.nav-item a:hover {
+  background: rgba(56,189,248,0.08);
+  border-color: rgba(56,189,248,0.15);
+  color: var(--accent);
+}
+
+.content {
+  flex: 1;
+  padding: 32px 42px;
+}
+
+.page-title {
+  margin: 0 0 10px;
+  font-size: 26px;
+  letter-spacing: -0.5px;
+}
+
+.subtle {
+  color: var(--muted);
+  margin-top: 0;
+}
+
+.grid {
+  display: grid;
+  gap: 16px;
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 22px;
+  box-shadow: var(--card-shadow);
+}
+
+.card-header { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.card-title { margin: 0; font-size: 18px; }
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--accent);
+  color: #0b1324;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.2s ease;
+  box-shadow: 0 10px 30px rgba(56,189,248,0.25);
+}
+.button:hover { transform: translateY(-1px); }
+
+.button.secondary {
+  background: rgba(255,255,255,0.06);
+  color: var(--text);
+  border: 1px solid var(--border);
+  box-shadow: none;
+}
+
+.button.danger { background: var(--danger); color: #0b1324; box-shadow: 0 10px 30px rgba(248,113,113,0.3); }
+.button.success { background: var(--success); color: #0b1324; box-shadow: 0 10px 30px rgba(52,211,153,0.25); }
+
+.table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+.table th, .table td { padding: 12px 10px; border-bottom: 1px solid var(--border); text-align: left; }
+.table th { color: var(--muted); font-weight: 600; font-size: 13px; }
+.table tr:hover td { background: rgba(255,255,255,0.03); }
+
+.form-grid { display: grid; gap: 14px; max-width: 520px; }
+.label { font-weight: 600; margin-bottom: 6px; display: block; }
+.input, .select, .textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.04);
+  color: var(--text);
+  font-size: 15px;
+}
+.textarea { min-height: 120px; resize: vertical; }
+
+.inline-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.alert { padding: 12px 14px; border-radius: 10px; border: 1px solid var(--border); background: rgba(255,255,255,0.04); margin-bottom: 14px; }
+.alert.success { border-color: rgba(52,211,153,0.5); color: var(--success); }
+.alert.error { border-color: rgba(248,113,113,0.5); color: var(--danger); }
+.alert.neutral { color: var(--muted); }
+
+.badge { display: inline-block; padding: 4px 8px; border-radius: 8px; background: rgba(255,255,255,0.06); border: 1px solid var(--border); font-size: 12px; color: var(--muted); }
+
+code { background: rgba(255,255,255,0.05); padding: 2px 6px; border-radius: 6px; }

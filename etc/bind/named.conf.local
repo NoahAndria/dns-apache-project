@@ -1,0 +1,12 @@
+
+
+
+zone "hanaa.com" {
+    type master;
+    file './etc/bind/zones/db.hanaa.com';
+};
+
+zone "sixseven.com" {
+    type master;
+    file './etc/bind/zones/db.sixseven.com';
+};
