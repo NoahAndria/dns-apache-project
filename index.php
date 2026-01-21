@@ -23,7 +23,7 @@
                         <h3 class="card-title">APACHE Management</h3>
                     </div>
                     <p class="subtle">Manage Apache sites (coming soon).</p>
-                    <button class="button secondary" onclick="location.href='apache.php'">Open Apache</button>
+                    <button class="button secondary" ><a href="upload_site.php">Upload webiste</a></button>
                 </div>
             </div>
         </div>

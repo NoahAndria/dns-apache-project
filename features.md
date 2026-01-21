@@ -41,7 +41,7 @@ Technology: php
 - #**feature** dig domain
  
  ## APACHE
-
+- When we go to the Apache page, it should have 
 Normal steps to create zone using bind9 (say example.com)
 Adding files to /etc/bind/ and cd-ing to it ok
 editing named.conf.local and adding the zone ok

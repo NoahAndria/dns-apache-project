@@ -1,0 +1,25 @@
+run this command
+
+sudo visudo -f /etc/sudoers.d/www-data-sites
+
+and then
+
+paste all of this (verify if some paths need to be changed) 
+
+
+Cmnd_Alias CREATE_SITE = /bin/bash /var/www/html/dns-apache-dns-only/scripts/create_site.sh *
+www-data ALL=(root) NOPASSWD: CREATE_SITE
+www-data ALL=(root) NOPASSWD: /usr/sbin/a2ensite *
+www-data ALL=(root) NOPASSWD: /usr/sbin/a2dissite *
+www-data ALL=(root) NOPASSWD: /bin/systemctl reload apache2
+www-data ALL=(root) NOPASSWD: /usr/bin/named-checkconf
+www-data ALL=(root) NOPASSWD: /usr/bin/named-checkzone
+
+www-data ALL=(root) NOPASSWD: /usr/bin/systemctl start bind9
+www-data ALL=(root) NOPASSWD: /usr/bin/systemctl stop bind9
+www-data ALL=(root) NOPASSWD: /usr/bin/systemctl reload bind9
+www-data ALL=(root) NOPASSWD: /usr/bin/systemctl restart bind9
+
+www-data ALL=(root) NOPASSWD: /var/www/html/dns-apache-dns-only/scripts/update_bind.sh *
+
+

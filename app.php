@@ -193,9 +193,11 @@ function write_zone_records(string $domain, array $header, array $records): void
 }
 
 function run_cmd(string $cmd): string {
-    // Simple wrapper to capture output and errors
-    $output = shell_exec($cmd . ' 2>&1');
+    // Simple wrapper to capture output and errors using exec()
+    $outputLines = [];
+    $ret = 0;
+    exec($cmd, $outputLines, $ret);
+    $output = implode("\n", $outputLines);
     return $output === null ? '' : $output;
 }
-
 ?>

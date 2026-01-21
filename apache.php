@@ -12,7 +12,7 @@
                 <div class="card-header">
                     <h1 class="page-title">APACHE Management</h1>
                 </div>
-                <p class="subtle">Coming soon...</p>
+                <p class="subtle"><a href="upload_site.php">Upload webiste</a></p>
             </div>
         </div>
     </div>
